@@ -4,24 +4,22 @@ CREATE SCHEMA stars_team AUTHORIZATION postgres;
 
 -- Drop table
 
--- DROP TABLE stars_team.account_user;
-
-CREATE TABLE stars_team.account_user (
-	user_id int4 NOT NULL GENERATED ALWAYS AS IDENTITY,
-	username varchar(50) NOT NULL,
-	account_id int4 NULL,
-	CONSTRAINT account_user_pkey PRIMARY KEY (user_id),
-	CONSTRAINT fk_account FOREIGN KEY (account_id) REFERENCES stars_team.stars_account(account_id)
-);
-
--- Drop table
-
 -- DROP TABLE stars_team.genre;
 
 CREATE TABLE stars_team.genre (
 	genre_id int4 NOT NULL GENERATED ALWAYS AS IDENTITY,
 	genre_name varchar(30) NULL,
 	CONSTRAINT genre_pkey PRIMARY KEY (genre_id)
+);
+
+-- Drop table
+
+-- DROP TABLE stars_team."subscription";
+
+CREATE TABLE stars_team."subscription" (
+	subscription_id int4 NOT NULL GENERATED ALWAYS AS IDENTITY,
+	subcription_name varchar(30) NOT NULL,
+	CONSTRAINT subscription_pkey PRIMARY KEY (subscription_id)
 );
 
 -- Drop table
@@ -42,12 +40,14 @@ CREATE TABLE stars_team.stars_account (
 
 -- Drop table
 
--- DROP TABLE stars_team."subscription";
+-- DROP TABLE stars_team.account_user;
 
-CREATE TABLE stars_team."subscription" (
-	subscription_id int4 NOT NULL GENERATED ALWAYS AS IDENTITY,
-	subcription_name varchar(30) NOT NULL,
-	CONSTRAINT subscription_pkey PRIMARY KEY (subscription_id)
+CREATE TABLE stars_team.account_user (
+	user_id int4 NOT NULL GENERATED ALWAYS AS IDENTITY,
+	username varchar(50) NOT NULL,
+	account_id int4 NULL,
+	CONSTRAINT account_user_pkey PRIMARY KEY (user_id),
+	CONSTRAINT fk_account FOREIGN KEY (account_id) REFERENCES stars_team.stars_account(account_id)
 );
 
 -- Drop table
