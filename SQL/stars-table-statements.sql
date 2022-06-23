@@ -1,4 +1,4 @@
--- DROP SCHEMA stars_team;
+-- DROP SCHEMA stars_team cascade;
 
 CREATE SCHEMA stars_team AUTHORIZATION postgres;
 
@@ -20,6 +20,16 @@ CREATE TABLE stars_team."subscription" (
 	subscription_id int4 NOT NULL GENERATED ALWAYS AS IDENTITY,
 	subcription_name varchar(30) NOT NULL,
 	CONSTRAINT subscription_pkey PRIMARY KEY (subscription_id)
+);
+
+-- Drop table
+
+-- DROP Table stars_team.video_type;
+
+CREATE TABLE stars_team.video_type (
+	type_id int4 NOT NULL GENERATED ALWAYS AS IDENTITY,
+	type_name varchar(25) NOT NULL,
+	CONSTRAINT video_type_pkey PRIMARY KEY (type_id)
 );
 
 -- Drop table
@@ -56,10 +66,20 @@ CREATE TABLE stars_team.account_user (
 
 CREATE TABLE stars_team.watch_list (
 	watch_list_id int4 NOT NULL GENERATED ALWAYS AS IDENTITY,
-	watch_list_name varchar(50) NOT NULL,
-	user_id int4 NULL,
-	genre_id int4 NULL,
+	video_id int4 NOT NULL,
+	user_id int4 NOT NULL,
+	type_id int4 NOT NULL,
 	CONSTRAINT watch_list_pkey PRIMARY KEY (watch_list_id),
-	CONSTRAINT fk_genre FOREIGN KEY (genre_id) REFERENCES stars_team.genre(genre_id),
+	CONSTRAINT fk_genre FOREIGN KEY (type_id) REFERENCES stars_team.video_type(type_id),
 	CONSTRAINT fk_user FOREIGN KEY (user_id) REFERENCES stars_team.account_user(user_id)
+);
+
+-- Drop table
+
+-- DROP TABLE stars_team.watch_list_genre;
+
+CREATE TABLE stars_team.watch_list_genre (
+	watch_list_id int4 NOT NULL,
+	genre_id int4 NOT NULL,
+	CONSTRAINT watch_list_genre_pkey PRIMARY KEY (watch_list_id, genre_id)
 );

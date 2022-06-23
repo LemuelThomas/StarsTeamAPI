@@ -3,9 +3,9 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -855.833333333334,
-    "scrollLeft": -228.83333333333331,
-    "zoomLevel": 0.8,
+    "scrollTop": -679.0000000000007,
+    "scrollLeft": -372.83333333333337,
+    "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
       "columnComment": true,
@@ -44,7 +44,7 @@
     "tables": [
       {
         "name": "netflix_user",
-        "comment": "user table",
+        "comment": "",
         "columns": [
           {
             "name": "user_id",
@@ -120,7 +120,7 @@
           "active": false,
           "left": 303.6669,
           "top": 1103.1366,
-          "zIndex": 25,
+          "zIndex": 112,
           "widthName": 68.47900390625,
           "widthComment": 60
         },
@@ -237,7 +237,7 @@
       },
       {
         "name": "netflix_account",
-        "comment": "main account",
+        "comment": "",
         "columns": [
           {
             "name": "account_id",
@@ -405,9 +405,9 @@
           "active": false,
           "left": 289.9666,
           "top": 1368.7867,
-          "zIndex": 1,
+          "zIndex": 110,
           "widthName": 88.7216796875,
-          "widthComment": 79.32080078125
+          "widthComment": 60
         },
         "visible": true,
         "id": "402127e3-1eb2-4571-a873-18a1d895f2a4"
