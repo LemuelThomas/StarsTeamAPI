@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -800,
-    "scrollLeft": -410.5,
+    "scrollTop": -855.833333333334,
+    "scrollLeft": -228.83333333333331,
     "zoomLevel": 0.8,
     "show": {
       "tableComment": true,
@@ -118,9 +118,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 362.6669,
-          "top": 1096.6366,
-          "zIndex": 5,
+          "left": 303.6669,
+          "top": 1103.1366,
+          "zIndex": 25,
           "widthName": 68.47900390625,
           "widthComment": 60
         },
@@ -155,24 +155,24 @@
             "id": "409f6a0f-fe3e-4b47-9e86-4576951a9473"
           },
           {
-            "name": "watch_list_name",
+            "name": "video_id",
             "comment": "",
-            "dataType": "VARCHAR(50)",
+            "dataType": "INT",
             "default": "",
             "option": {
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": true
+              "notNull": false
             },
             "ui": {
               "active": false,
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 98.8271484375,
+              "widthName": 60,
               "widthComment": 60,
-              "widthDataType": 87.71875,
+              "widthDataType": 60,
               "widthDefault": 60
             },
             "id": "e5ac7da9-9178-4f26-80c8-e3bba4c8ee30"
@@ -201,7 +201,7 @@
             "id": "77539bb3-a230-414c-9c9a-23bcbf23c48f"
           },
           {
-            "name": "genre_id",
+            "name": "type_id",
             "comment": "",
             "dataType": "INT",
             "default": "",
@@ -221,14 +221,14 @@
               "widthDataType": 60,
               "widthDefault": 60
             },
-            "id": "b9154412-3a47-48e2-bb38-89f92b902bdd"
+            "id": "a31e2161-8fdb-4cea-aafb-c8445c08ec68"
           }
         ],
         "ui": {
           "active": false,
-          "left": 299.0427,
-          "top": 814.4638,
-          "zIndex": 2,
+          "left": 310.7102,
+          "top": 846.6881,
+          "zIndex": 98,
           "widthName": 60,
           "widthComment": 85.0908203125
         },
@@ -465,9 +465,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 799.9218,
-          "top": 1270.4399,
-          "zIndex": 3,
+          "left": 796.5887,
+          "top": 1474.8846,
+          "zIndex": 103,
           "widthName": 71.3671875,
           "widthComment": 60
         },
@@ -527,14 +527,138 @@
         ],
         "ui": {
           "active": false,
-          "left": 816.0834,
-          "top": 1009.1666,
-          "zIndex": 4,
+          "left": 794.4157,
+          "top": 1287.4999,
+          "zIndex": 104,
           "widthName": 60,
           "widthComment": 60
         },
         "visible": true,
         "id": "43526d2a-1416-4161-81f3-bd61247a7b23"
+      },
+      {
+        "name": "watch_list_genre",
+        "comment": "",
+        "columns": [
+          {
+            "name": "watch_list_id",
+            "comment": "",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 76.42626953125,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "06f81772-20f6-45dc-b9b0-858218b78da1"
+          },
+          {
+            "name": "genre_id",
+            "comment": "",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "96700737-ffc4-456c-9d2e-eadb01e63c48"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 796.1677,
+          "top": 1079.7787,
+          "zIndex": 105,
+          "widthName": 99.55712890625,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "b7e1813f-7948-4e1a-a5c4-9deb71c7944f"
+      },
+      {
+        "name": "video_type",
+        "comment": "",
+        "columns": [
+          {
+            "name": "type_id",
+            "comment": "",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "9fa958db-77d8-4467-9a95-1cd9bce54009"
+          },
+          {
+            "name": "type_name",
+            "comment": "",
+            "dataType": "VARCHAR(25)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 66.32080078125,
+              "widthComment": 60,
+              "widthDataType": 87.71875,
+              "widthDefault": 60
+            },
+            "id": "6ad257e8-1f53-40cd-8d36-e1a45ed1ed89"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 803.9447,
+          "top": 854.8885,
+          "zIndex": 106,
+          "widthName": 64.8798828125,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "4ee6c32d-5ef7-4c2d-a4a5-6288da6a5e5d"
       }
     ],
     "indexes": []
@@ -553,8 +677,8 @@
           "columnIds": [
             "199d061f-94fc-461a-a9e4-e5f73f5a9d40"
           ],
-          "x": 552.4662164062499,
-          "y": 1096.6366,
+          "x": 493.46621640625,
+          "y": 1103.1366,
           "direction": "top"
         },
         "end": {
@@ -562,8 +686,8 @@
           "columnIds": [
             "77539bb3-a230-414c-9c9a-23bcbf23c48f"
           ],
-          "x": 505.81564921875,
-          "y": 965.4638,
+          "x": 492.423334765625,
+          "y": 997.6881,
           "direction": "bottom"
         },
         "constraintName": "fk_netflix_user_to_watch_list",
@@ -588,8 +712,8 @@
           "columnIds": [
             "52c525de-9994-4094-8cd1-2d73de364237"
           ],
-          "x": 552.4662164062499,
-          "y": 1227.1366,
+          "x": 493.46621640625,
+          "y": 1233.6366,
           "direction": "bottom"
         },
         "constraintName": "fk_netflix_account_to_netflix_user",
@@ -605,8 +729,8 @@
           "columnIds": [
             "b51748f6-862f-4be0-9886-cda07a864b03"
           ],
-          "x": 799.9218,
-          "y": 1325.4399,
+          "x": 796.5887,
+          "y": 1529.8846,
           "direction": "left"
         },
         "end": {
@@ -627,26 +751,78 @@
         "relationshipType": "OneN",
         "startRelationshipType": "Dash",
         "start": {
+          "tableId": "671e8a2c-81e3-4c8e-91b9-8ea14f0f7056",
+          "columnIds": [
+            "409f6a0f-fe3e-4b47-9e86-4576951a9473"
+          ],
+          "x": 674.13646953125,
+          "y": 959.9381,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "b7e1813f-7948-4e1a-a5c4-9deb71c7944f",
+          "columnIds": [
+            "06f81772-20f6-45dc-b9b0-858218b78da1"
+          ],
+          "x": 796.1677,
+          "y": 1134.7787,
+          "direction": "left"
+        },
+        "constraintName": "fk_watch_list_to_watch_list_genre",
+        "visible": true,
+        "id": "6ecd56dc-a315-4ce6-b02d-c7a89caa9c9d"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
           "tableId": "43526d2a-1416-4161-81f3-bd61247a7b23",
           "columnIds": [
             "24f21447-4cf2-4e92-b8a2-ff3206d1abef"
           ],
-          "x": 816.0834,
-          "y": 1064.1666,
+          "x": 977.71501640625,
+          "y": 1287.4999,
+          "direction": "top"
+        },
+        "end": {
+          "tableId": "b7e1813f-7948-4e1a-a5c4-9deb71c7944f",
+          "columnIds": [
+            "96700737-ffc4-456c-9d2e-eadb01e63c48"
+          ],
+          "x": 977.880834765625,
+          "y": 1189.7787,
+          "direction": "bottom"
+        },
+        "constraintName": "fk_genre_to_watch_list_genre",
+        "visible": true,
+        "id": "cc27f9cb-5c3a-4f09-a821-65215f8588d3"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "4ee6c32d-5ef7-4c2d-a4a5-6288da6a5e5d",
+          "columnIds": [
+            "9fa958db-77d8-4467-9a95-1cd9bce54009"
+          ],
+          "x": 803.9447,
+          "y": 909.8885,
           "direction": "left"
         },
         "end": {
           "tableId": "671e8a2c-81e3-4c8e-91b9-8ea14f0f7056",
           "columnIds": [
-            "b9154412-3a47-48e2-bb38-89f92b902bdd"
+            "a31e2161-8fdb-4cea-aafb-c8445c08ec68"
           ],
-          "x": 712.5885984375,
-          "y": 889.9638,
+          "x": 674.13646953125,
+          "y": 884.4381,
           "direction": "right"
         },
-        "constraintName": "fk_genre_to_watch_list",
+        "constraintName": "fk_video_type_to_watch_list",
         "visible": true,
-        "id": "d05931db-136e-4861-b169-5547785c12a3"
+        "id": "d63d258c-95a9-4be0-9919-02d5c6c03de7"
       }
     ]
   }
