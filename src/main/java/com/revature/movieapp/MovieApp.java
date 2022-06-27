@@ -1,11 +1,9 @@
 package com.revature.movieapp;
 
-import com.revature.movieapp.models.MainAcc;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.UUID;
 
 @SpringBootApplication
 public class MovieApp implements CommandLineRunner {
@@ -18,5 +16,4 @@ public class MovieApp implements CommandLineRunner {
 
     }
 
-    //private final UserRepository userRepo;
 }

@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface MainAccRepo extends JpaRepository<MainAcc, String> {
-    MainAcc findUserByEmailAddress(String emailAddress);
-    MainAcc findUserByUsernameAndPassword(String username, String password);
+//    MainAcc findUserByEmailAddress(String emailAddress);
+//    MainAcc findUserByUsernameAndPassword(String username, String password);
 }
