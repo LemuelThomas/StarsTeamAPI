@@ -1,6 +1,9 @@
 package com.revature.movieapp.models;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 @Entity
@@ -14,28 +17,30 @@ public class MainAcc  {
     private String lastName;
     @Column(nullable = false, unique = true)
     private String email;
-    @Column(nullable = false, unique = true)
-    private String username;
+//    @Column(nullable = false, unique = true)
+//    private String username;
     @Column(nullable = false)
     private String password;
-    @Column(nullable = false)
-    private int age;
+    @Column(nullable = false, columnDefinition = "DATE")
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    private Date age;
     @Id
     @Column(name = "account_id",nullable = false)
     private int id;
 
     @OneToMany
+    @JoinColumn(name = "user_id")
     private List<Users> accUsers;
 
     public MainAcc() {
     }
 
-    public MainAcc(int sub_id, String firstName, String lastName, String email, String username, String password, int age, int id) {
+    public MainAcc(int sub_id, String firstName, String lastName, String email, String username, String password, Date age, int id) {
         this.sub_id = sub_id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.username = username;
+
         this.password = password;
         this.age = age;
         this.id = id;
@@ -73,13 +78,13 @@ public class MainAcc  {
         this.email = email;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
+//    public String getUsername() {
+//        return username;
+//    }
+//
+//    public void setUsername(String username) {
+//        this.username = username;
+//    }
 
     public String getPassword() {
         return password;
@@ -89,11 +94,11 @@ public class MainAcc  {
         this.password = password;
     }
 
-    public int getAge() {
+    public Date getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Date age) {
         this.age = age;
     }
 
@@ -118,12 +123,12 @@ public class MainAcc  {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         MainAcc mainAcc = (MainAcc) o;
-        return sub_id == mainAcc.sub_id && age == mainAcc.age && id == mainAcc.id && Objects.equals(firstName, mainAcc.firstName) && Objects.equals(lastName, mainAcc.lastName) && Objects.equals(email, mainAcc.email) && Objects.equals(username, mainAcc.username) && Objects.equals(password, mainAcc.password) && Objects.equals(accUsers, mainAcc.accUsers);
+        return sub_id == mainAcc.sub_id && age == mainAcc.age && id == mainAcc.id && Objects.equals(firstName, mainAcc.firstName) && Objects.equals(lastName, mainAcc.lastName) && Objects.equals(email, mainAcc.email) && Objects.equals(password, mainAcc.password) && Objects.equals(accUsers, mainAcc.accUsers);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sub_id, firstName, lastName, email, username, password, age, id, accUsers);
+        return Objects.hash(sub_id, firstName, lastName, email, password, age, id, accUsers);
     }
 
     @Override
@@ -133,7 +138,7 @@ public class MainAcc  {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
-                ", username='" + username + '\'' +
+//                ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", age=" + age +
                 ", id=" + id +
