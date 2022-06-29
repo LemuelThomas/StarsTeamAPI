@@ -2,6 +2,7 @@ package com.revature.movieapp.models;
 
 import javax.persistence.*;
 import java.util.Objects;
+
 @Entity
 @Table(name = "account_user")
 public class Users {
