@@ -10,6 +10,6 @@ public class TestController {
 
     @GetMapping
     public String sanity(){
-        return "/This is a test.Q";
+        return "/This is a test.";
     }
 }
