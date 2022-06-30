@@ -3,7 +3,7 @@
 .idea/
 *.iml
 target/
-application.yml
+src/main/resources/application.yml
 
 # Log file
 *.log

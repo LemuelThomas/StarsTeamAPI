@@ -1,19 +1,22 @@
 package com.revature.movieapp.models;
 
 
+import org.springframework.stereotype.Component;
+
 import javax.persistence.*;
 
+
 @Entity
-@Table(schema = "Movie_DB", name ="faqs")
+@Table( name ="faq")
 public class FAQs {
 
     @Id
-    @GeneratedValue
-    private int id;
-    @Column(name ="faq_question")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int faq_id;
+    @Column(name ="question")
     private String faq_question;
 
-    @Column(name = "faq_question")
+    @Column(name = "answer")
     private String faq_answer;
 
 
@@ -23,18 +26,18 @@ public class FAQs {
 
     public FAQs(int id, String faq_question, String faq_answer) {
         super();
-        this.id = id;
+        this.faq_id = id;
         this.faq_question = faq_question;
         this.faq_answer = faq_answer;
     }
 
 
     public int getId() {
-        return id;
+        return faq_id;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.faq_id = id;
     }
 
     public String getFaq_question() {
@@ -55,7 +58,7 @@ public class FAQs {
     @Override
     public String toString() {
         return "FAQs{" +
-                "id=" + id +
+                "id=" + faq_id +
                 ", faq_question='" + faq_question + '\'' +
                 ", faq_answer='" + faq_answer + '\'' +
                 '}';
