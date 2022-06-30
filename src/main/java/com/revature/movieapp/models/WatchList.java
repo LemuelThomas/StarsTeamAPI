@@ -8,15 +8,15 @@ import java.util.List;
 public class WatchList {
 
     @Id
-    @Column(name = "watch_list_id")
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "watch_list_id", insertable=false)
+    private Integer id;
 
     @Column(name = "video_id")
     private int videoId;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private Users userId;
+    @Column(name = "user_id")
+    private int userId;
 
     @ManyToOne
     @JoinColumn(name = "type_id")
@@ -34,11 +34,11 @@ public class WatchList {
 
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -50,11 +50,11 @@ public class WatchList {
         this.videoId = videoId;
     }
 
-    public Users getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public void setUserId(Users userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 

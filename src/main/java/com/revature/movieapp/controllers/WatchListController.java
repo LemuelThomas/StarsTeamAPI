@@ -1,17 +1,50 @@
 package com.revature.movieapp.controllers;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.revature.movieapp.dto.GenreRequest;
+import com.revature.movieapp.dto.NewWatchListRequest;
+import com.revature.movieapp.dto.VideoTypeRequest;
+import com.revature.movieapp.dto.WatchListResponse;
+import com.revature.movieapp.services.WatchListService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("/watchlist")
 public class WatchListController {
 
+    private final WatchListService watchListService;
 
-
-    @GetMapping("/movies")
-    public String test() {
-        return "ribbit movies";
+    @Autowired
+    public WatchListController(WatchListService watchListService) {
+        this.watchListService = watchListService;
     }
+
+    //testing endpoint
+    @GetMapping(value = "/movies", produces = "application/json")
+    public String test() {
+        VideoTypeRequest VTR = new VideoTypeRequest(1,"Movie");
+        List<Integer> genreList = new ArrayList<>();
+        genreList.add(28);
+        genreList.add(12);
+        genreList.add(10751);
+        genreList.add(35);
+        //GenreRequest GR = new GenreRequest(genreList);
+        NewWatchListRequest NWLR = new NewWatchListRequest(675353,VTR,1, genreList);
+        return watchListService.createNewMovieWatchList(NWLR).toString();
+    }
+
+    @GetMapping(value = "/movies/{userId}", produces = "application/json")
+    public List<WatchListResponse> getWatchListByUser(@PathVariable int userId) {
+        return watchListService.getMovieWatchList(userId);
+    }
+
+    // TODO
+    @PostMapping(value = "/movies", consumes = "application/json", produces = "application/json")
+    public WatchListResponse addWatchList(@RequestBody NewWatchListRequest NWLR) {
+        return null;
+    }
+
 }

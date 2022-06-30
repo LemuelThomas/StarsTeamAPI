@@ -1,19 +1,14 @@
-package com.revature.movieapp.models;
+package com.revature.movieapp.dto;
 
-import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
-@Entity
-@Table(name = "video_type")
-public class VideoType {
-    @Id
-    @Column(name = "type_id")
+public class VideoTypeRequest {
+
+    @NotNull
     private int id;
-    @Column(name = "type_name")
     private String name;
 
-    public VideoType() {}
-
-    public VideoType(int id, String name) {
+    public VideoTypeRequest(int id,String name) {
         this.id = id;
         this.name = name;
     }
