@@ -24,7 +24,7 @@ public class WatchListController {
 
     //testing endpoint
     @GetMapping(value = "/movies", produces = "application/json")
-    public String test() {
+    public WatchListResponse test() {
         VideoTypeRequest VTR = new VideoTypeRequest(1,"Movie");
         List<Integer> genreList = new ArrayList<>();
         genreList.add(28);
@@ -33,7 +33,7 @@ public class WatchListController {
         genreList.add(35);
         //GenreRequest GR = new GenreRequest(genreList);
         NewWatchListRequest NWLR = new NewWatchListRequest(675353,VTR,1, genreList);
-        return watchListService.createNewMovieWatchList(NWLR).toString();
+        return watchListService.createNewMovieWatchList(NWLR);
     }
 
     @GetMapping(value = "/movies/{userId}", produces = "application/json")
@@ -41,10 +41,21 @@ public class WatchListController {
         return watchListService.getMovieWatchList(userId);
     }
 
-    // TODO
     @PostMapping(value = "/movies", consumes = "application/json", produces = "application/json")
     public WatchListResponse addWatchList(@RequestBody NewWatchListRequest NWLR) {
-        return null;
+        /*
+        //example json
+        {
+            "video": 675353,
+            "userId": 1,
+            "type": {
+              "id": 1,
+              "name": "Movie"
+            },
+            "genre": [28, 12, 10751, 35]
+        }
+        */
+        return watchListService.createNewMovieWatchList(NWLR);
     }
 
 }

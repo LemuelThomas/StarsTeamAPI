@@ -51,4 +51,14 @@ public class NewWatchListRequest {
     public void setGenre(List<Integer> genre) {
         this.genre = genre;
     }
+
+    @Override
+    public String toString() {
+        return "NewWatchListRequest{" +
+                "video=" + video +
+                ", type=" + type +
+                ", userId=" + userId +
+                ", genre=" + genre +
+                '}';
+    }
 }
