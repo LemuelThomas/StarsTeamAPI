@@ -7,7 +7,7 @@ CREATE SCHEMA stars_team AUTHORIZATION postgres;
 -- DROP TABLE stars_team.genre;
 
 CREATE TABLE stars_team.genre (
-	genre_id int4 NOT NULL GENERATED ALWAYS AS IDENTITY,
+	genre_id int4 NOT NULL,
 	genre_name varchar(30) NULL,
 	CONSTRAINT genre_pkey PRIMARY KEY (genre_id)
 );
@@ -83,3 +83,15 @@ CREATE TABLE stars_team.watch_list_genre (
 	genre_id int4 NOT NULL,
 	CONSTRAINT watch_list_genre_pkey PRIMARY KEY (watch_list_id, genre_id)
 );
+
+-- Drop table
+
+-- DROP TABLE stars_team.faq;
+
+create table stars_team.faq (
+	faq_id int4 NOT NULL GENERATED ALWAYS AS identity,
+	question VARCHAR(255) not null,
+	answer VARCHAR not null,
+	
+	constraint faq_pkey primary key (faq_id)
+); 
