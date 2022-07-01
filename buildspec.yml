@@ -6,7 +6,6 @@ phases:
       java: corretto8
   pre_build:
     commands:
-      - echo this is the prebuild phase
       - aws s3 cp s3://starsteamapi-filecontents/application.yml ./src/main/resources
   build:
     commands:
