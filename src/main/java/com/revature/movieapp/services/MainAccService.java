@@ -28,8 +28,10 @@ public class MainAccService {
 //       return mainAccRepo.findById(id).map(MainAccResponse::new);
 //
 //    }
-    public Optional<MainAccResponse> fetchAccById(int id){
-        return mainAccRepo.findMainAccById(id).map(MainAccResponse::new);
+    public MainAccResponse fetchAccById(int id){
+        return mainAccRepo.findById(id)
+                .map(MainAccResponse::new)
+                .orElseThrow(() -> new RuntimeException("no account found with id"));
     }
 
 }
