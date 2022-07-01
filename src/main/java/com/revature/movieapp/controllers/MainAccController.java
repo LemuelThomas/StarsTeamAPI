@@ -27,7 +27,7 @@ public class MainAccController {
 //        return mainAccService.fetchAllUsers();
 //    }
     @GetMapping("/id/{account_id}")
-    public Optional<MainAccResponse> getAccById(@PathVariable int account_id){
+    public MainAccResponse getAccById(@PathVariable int account_id){
         return mainAccService.fetchAccById((account_id));
     }
 }

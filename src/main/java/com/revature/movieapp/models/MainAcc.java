@@ -6,6 +6,8 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
+
 @Entity
 @Table(name = "stars_account")
 public class MainAcc  {
@@ -28,8 +30,7 @@ public class MainAcc  {
     @Column(name = "account_id",nullable = false)
     private int id;
 
-    @OneToMany
-    @JoinColumn(name = "user_id")
+    @OneToMany(mappedBy = "userAcc")
     private List<Users> accUsers;
 
     public MainAcc() {
@@ -142,7 +143,7 @@ public class MainAcc  {
                 ", password='" + password + '\'' +
                 ", age=" + age +
                 ", id=" + id +
-                ", accUsers=" + accUsers +
-                '}';
+                ", accUsers=" + accUsers.stream().map(Users::getUser_id).collect(Collectors.toList()) +
+        '}';
     }
 }
