@@ -12,8 +12,8 @@ phases:
       - mvn clean package
   post_build:
     commands:
-      - mv target/*.jar ./Project2.jar
+      - mv target/*.jar ./Project2-1.0-SNAPSHOT.jar
 
 artifacts:
   files:
-    - Project2.jar
+    - Project2-1.0-SNAPSHOT.jar
