@@ -11,7 +11,7 @@ import java.util.Optional;
 public interface MainAccRepository extends JpaRepository<MainAcc, String> {
 //        boolean existsByUsername(String username);
 //        MainAcc findUserByEmailAddress(String email);
-//        MainAcc findUserByEmailAndPassword(String email, String password);
+       Optional<MainAcc>  findUserByEmailAndPassword(String email, String password);
     Optional<MainAcc> findMainAccById(int id);
 
 }
