@@ -8,10 +8,10 @@ import java.util.Arrays;
 import java.util.Optional;
 
 @Repository
-public interface MainAccRepository extends JpaRepository<MainAcc, String> {
+public interface MainAccRepository extends JpaRepository<MainAcc, Integer> {
 //        boolean existsByUsername(String username);
 //        MainAcc findUserByEmailAddress(String email);
 //        MainAcc findUserByEmailAndPassword(String email, String password);
-    Optional<MainAcc> findMainAccById(int id);
+//    Optional<MainAcc> findMainAccById(int id);
 
 }
