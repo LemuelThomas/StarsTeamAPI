@@ -1,23 +1,23 @@
 package com.revature.movieapp.controllers;
 
+import com.revature.movieapp.models.FAQs;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import services.FAQs_Service;
 
 @RestController
 @RequestMapping("/faqs")
 public class FAQsController
 {
-
-    private String faQs;
+FAQs_Service faQs_service;
+    //private String faQs;
     @GetMapping()
- public String GetFAQs(){return faQs;}
+ public String GetFAQs(){return null;}
 
-@PostMapping("/faqs")
-    void createFAQs(){
+@PostMapping()
+    void createFAQs(@RequestBody FAQs faQs){
+        faQs_service.saveFAQ(faQs);
 
 }
 
