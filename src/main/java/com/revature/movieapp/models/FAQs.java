@@ -7,6 +7,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @ToString
+@Data
 @Entity
 @Table(name = "faq")
 public class FAQs
