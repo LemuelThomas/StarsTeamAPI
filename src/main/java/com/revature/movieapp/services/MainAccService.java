@@ -1,5 +1,6 @@
 package com.revature.movieapp.services;
 
+import com.revature.movieapp.auth.dtos.AuthRequest;
 import com.revature.movieapp.dtos.MainAccResponse;
 import com.revature.movieapp.repos.MainAccRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,4 +35,9 @@ public class MainAccService {
                 .orElseThrow(() -> new RuntimeException("no account found with id"));
     }
 
+    public MainAccResponse authenticateAcctCredentials(AuthRequest authRequest) {
+        return mainAccRepo.findUserByEmailAndPassword(authRequest.getEmail(), authRequest.getPassword())
+                .map(MainAccResponse::new)
+                .orElseThrow(RuntimeException::new);
+    }
 }

@@ -1,3 +1,4 @@
+
 package com.revature.movieapp.models;
 import lombok.*;
 import javax.persistence.*;
@@ -22,3 +23,4 @@ public class FAQs
     private String faq_answer;
 
 }
+

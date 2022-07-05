@@ -1,3 +1,4 @@
+
 package com.revature.movieapp.controllers;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -16,3 +17,4 @@ public class FAQsController
 
 
 }
+
