@@ -30,5 +30,6 @@ public class MainAccResponse {
         this.firstName = mainAcc.getLastName();
         this.email = mainAcc.getEmail();
         this.password = mainAcc.getPassword();
+        this.age = mainAcc.getAge();
     }
 }
