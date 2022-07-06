@@ -1,11 +1,12 @@
 package com.revature.movieapp.services;
 
 import com.revature.movieapp.dtos.MainAccResponse;
+import com.revature.movieapp.dtos.UserResponse;
 import com.revature.movieapp.repos.MainAccRepository;
+import com.revature.movieapp.repos.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
 
 @Service
 public class MainAccService {
@@ -33,5 +34,4 @@ public class MainAccService {
                 .map(MainAccResponse::new)
                 .orElseThrow(() -> new RuntimeException("no account found with id"));
     }
-
 }
