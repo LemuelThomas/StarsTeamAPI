@@ -13,20 +13,19 @@ import javax.servlet.http.HttpServletResponse;
 @RequestMapping("/auth")
 public class AuthController {
 
-    private final MainAccService accService;
+    private final AuthService authService;
     private final TokenService tokenService;
 
     @Autowired
-    public  AuthController(MainAccService accService, TokenService tokenService) {
+    public  AuthController(AuthService authService, TokenService tokenService) {
 
-        this.accService = accService;
+        this.authService = authService;
         this.tokenService = tokenService;
     }
 
     @PostMapping(consumes = "application/json", produces = "application/json")
     public Principal authenticate(@RequestBody AuthRequest authRequest, HttpServletResponse resp) {
-        MainAccResponse authUser =  accService.authenticateAcctCredentials(authRequest);
-        Principal payload = new Principal(authUser);
+        Principal payload =  authService.authenticateAcctCredentials(authRequest);
         String token = tokenService.generateToken(payload);
         resp.setHeader("Authorization", token);
         return payload;
