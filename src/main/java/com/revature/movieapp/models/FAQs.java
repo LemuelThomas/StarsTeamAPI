@@ -1,3 +1,4 @@
+
 package com.revature.movieapp.models;
 
 import lombok.*;
@@ -33,3 +34,4 @@ public class FAQs {
         this.faq_answer = s1;
     }
 }
+

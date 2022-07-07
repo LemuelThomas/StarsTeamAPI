@@ -1,3 +1,4 @@
+
 package com.revature.movieapp.controllers;
 
 import com.revature.movieapp.models.FAQs;
@@ -44,3 +45,4 @@ public class FAQsController {
 
 
 }
+
