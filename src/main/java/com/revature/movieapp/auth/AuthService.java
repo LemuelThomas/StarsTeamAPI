@@ -3,6 +3,7 @@ package com.revature.movieapp.auth;
 import com.revature.movieapp.auth.dtos.AuthRequest;
 import com.revature.movieapp.auth.dtos.Principal;
 import com.revature.movieapp.dtos.MainAccResponse;
+import com.revature.movieapp.dtos.UserResponse;
 import com.revature.movieapp.services.MainAccService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
