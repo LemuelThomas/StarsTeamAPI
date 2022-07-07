@@ -1,31 +1,26 @@
 package com.revature.movieapp.services;
 
-import com.revature.movieapp.dtos.MainAccResponse;
 import com.revature.movieapp.dtos.UserResponse;
+import com.revature.movieapp.repos.MainAccRepository;
 import com.revature.movieapp.repos.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
-
 @Service
 public class UserService{
     private final UserRepository userRepo;
+    private final MainAccRepository mainAccRepo;
 
     @Autowired
-    public UserService(UserRepository userRepo){
+    public UserService(UserRepository userRepo, MainAccRepository mainAccRepo){
         this.userRepo = userRepo;
+        this.mainAccRepo = mainAccRepo;
     }
 
-//    public List<UserResponse> fetchAllUsers(){
-//        return userRepo.findAll()
-//                    .stream()
-//                    .map(UserResponse::new)
-//                    .collect(Collectors.toList());
-//    }
-//    public Optional<UserResponse> fetchUserById(int id){
-//        return userRepo.findUserAccById(id).map(UserResponse::new);
-//}
+    public UserResponse fetchUsersFromMainAcc(int id){
+        return mainAccRepo.findById(id)
+                .map(UserResponse::new)
+                .orElseThrow(() -> new RuntimeException("no account found with id"));
+    }
+
 }
