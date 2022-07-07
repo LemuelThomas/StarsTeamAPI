@@ -8,8 +8,9 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface FAQs_Repo extends JpaRepository<FAQs,Integer> {
-
-           }
+public interface FAQs_Repo extends JpaRepository<FAQs, Integer> {
+  @Query(nativeQuery = true, value = "SELECT * FROM faq")
+  List<FAQs> getFAQs();
+}
 
 
