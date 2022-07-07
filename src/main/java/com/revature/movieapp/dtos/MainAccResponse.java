@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 @NoArgsConstructor
 public class MainAccResponse {
 
-    private List<String> accUsers;
+    // private List<String> accUsers;
     private int account_id;
     private int sub_id;
     private String firstName;
@@ -23,7 +23,7 @@ public class MainAccResponse {
     private Date age;
 
     public MainAccResponse(MainAcc mainAcc){
-        this.accUsers = mainAcc.getAccUsers().stream().map(Users::getUsername).collect(Collectors.toList());
+        // this.accUsers = mainAcc.getAccUsers().stream().map(Users::getUsername).collect(Collectors.toList());
         this.account_id = mainAcc.getId();
         this.sub_id = mainAcc.getSub_id();
         this.lastName = mainAcc.getFirstName();
