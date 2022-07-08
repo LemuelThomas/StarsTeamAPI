@@ -13,11 +13,12 @@ public class FAQs {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int faq_id;
-    @Column()
+    @Column(name = "question")
     private String faq_question;
 
-    @Column()
+    @Column(name = "answer")
     private String faq_answer;
 
     public FAQs() {
