@@ -1,4 +1,5 @@
 
+
 package com.revature.movieapp.repos;
 
 import com.revature.movieapp.models.FAQs;
@@ -13,5 +14,6 @@ public interface FAQs_Repo extends JpaRepository<FAQs, Integer> {
   @Query(nativeQuery = true, value = "SELECT * FROM faq")
   List<FAQs> getFAQs();
 }
+
 
 
